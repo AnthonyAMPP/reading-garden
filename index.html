@@ -44,7 +44,7 @@ html, body, #app { height: 100%; }
 body {
   margin: 0; background: var(--sky); color: var(--ink);
   font-family: var(--letter); font-size: 17px;
-  -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
   overscroll-behavior: none;
 }
 button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; touch-action: manipulation; }
@@ -210,7 +210,26 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
 
   /* ---------- Audio: Web Audio buffers so clips chain without gaps or lag ---------- */
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const buffers = {}; let playing = null, token = 0;
+  const buffers = {}; let playing = null, token = 0, keepAlive = null;
+  // iPhone: Web Audio is muted by the silent switch unless the page asks for "playback"
+  // (iOS 17+) or an <audio> element is playing (older iOS), and it only starts inside a tap.
+  const SILENT = 'data:audio/mpeg;base64,SUQzBAAAAAAAIlRTU0UAAAAOAAADTGF2ZjYxLjcuMTAwAAAAAAAAAAAAAAD/83DAAAAAAAAAAAAASW5mbwAAAA8AAAAWAAAFNAAsLCwsNzc3NzdBQUFBS0tLS0tVVVVVX19fX19paWlpc3Nzc3N9fX19h4eHh4eRkZGRm5ubm5ulpaWlpa+vr6+5ubm5ucPDw8PNzc3NzdfX19fh4eHh4evr6+v19fX19f////8AAAAATGF2YzYxLjE5AAAAAAAAAAAAAAAAJAQvAAAAAAAABTRIUMqqAAAAAAAAAAAAAAAAAP/zIMQAAAADSAAAAABMQU1FMy45OS41VVVVVVVVVVVVVUxBTUUzLjk5LjVVVVVVVVVVVVX/8yLEJwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVVVf/zIMRPAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuOTkuNVVVVVVVVVVVVVX/8yDEdgAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVV//MgxJ0AAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuOTkuNVVVVVVVVVVVVf/zIsTEAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjk5LjVVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjk5LjVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVV//MixNcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuOTkuNVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjk5LjVVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuOTkuNVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjk5LjVVVVVVVVVVVVX/8yLE1wAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuOTkuNVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy45OS41VVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIsTXAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MixNcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=';
+  function unlock() {
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch {}
+    const p = ctx.resume().catch(() => {});
+    try { const s = ctx.createBufferSource(); s.buffer = ctx.createBuffer(1, 1, 22050); s.connect(ctx.destination); s.start(0); } catch {}
+    if (!navigator.audioSession) {
+      try { if (!keepAlive) { keepAlive = new Audio(SILENT); keepAlive.loop = true; keepAlive.setAttribute('playsinline', ''); } keepAlive.play().catch(() => {}); } catch {}
+    }
+    return p;
+  }
+  ['pointerup', 'touchend', 'keydown'].forEach(ev => document.addEventListener(ev, unlock, true));
+  // after a phone call, Siri or switching apps iOS leaves the audio "interrupted": ask for a tap to bring sound back
+  function needTap() {
+    stop(); $('#tapstart').hidden = false;
+    $('#tapstart-btn').onclick = async () => { await unlock(); $('#tapstart').hidden = true; hearAgain ? hearAgain() : say(['hello']); };
+  }
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && ctx.state !== 'running') ctx.resume().catch(() => {}).then(() => { if (ctx.state !== 'running' && C) needTap(); }); });
   async function load(file) {
     if (buffers[file]) return buffers[file];
     buffers[file] = fetch('audio/' + file).then(r => r.arrayBuffer()).then(b => new Promise((res, rej) => ctx.decodeAudioData(b, res, rej))).catch(() => null);
@@ -231,6 +250,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
   // say(['meet', 400, 's:s']) — strings are clips, numbers are pauses (ms)
   async function say(seq, onStep) {
     stop(); const my = token;
+    if (ctx.state !== 'running') { ctx.resume().catch(() => {}); await wait(80); if (ctx.state !== 'running') { needTap(); return false; } if (my !== token) return false; }
     for (let i = 0; i < seq.length; i++) {
       if (my !== token) return false;
       const item = seq[i];
@@ -288,7 +308,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
 
   /* ---------- Map ---------- */
   function renderMap() {
-    stop();
+    stop(); hearAgain = null;
     const cur = currentIndex();
     const total = progress.stickers.length;
     let html = `<section id="map" class="screen">
@@ -312,7 +332,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     });
     html += `<button class="grownups" id="gp-hold" aria-label="Grown-ups: press and hold"><svg class="ring" viewBox="0 0 28 28"><circle class="bg" cx="14" cy="14" r="11"/><circle class="fg" cx="14" cy="14" r="11"/></svg>Grown-ups (hold)</button></section>`;
     app.innerHTML = html;
-    app.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => { ctx.resume(); startLesson(+b.dataset.go); }));
+    app.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => { unlock(); startLesson(+b.dataset.go); }));
     const cs = $('.stone.current'); if (cs) cs.scrollIntoView({ block: 'center' });
     wireHold($('#gp-hold'));
   }
@@ -320,6 +340,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     let t;
     const down = e => { e.preventDefault(); btn.classList.add('holding'); t = setTimeout(() => { btn.classList.remove('holding'); openGrownups(); }, 1500); };
     const up = () => { clearTimeout(t); btn.classList.remove('holding'); };
+    btn.addEventListener('contextmenu', e => e.preventDefault());
     btn.addEventListener('pointerdown', down); ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => btn.addEventListener(ev, up));
     btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openGrownups(); });
   }
@@ -482,7 +503,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
         <div class="opts">${t.map((x, i) => `<button data-letter="${L}" data-i="${i}" class="${(takes[L] || 0) === i ? 'sel' : ''}" aria-label="Take ${i + 1} for ${L}">${i + 1}</button>`).join('')}</div></div>`;
     }).join('');
     $('#takes').querySelectorAll('button').forEach(b => b.onclick = () => {
-      ctx.resume();
+      unlock();
       takes[b.dataset.letter] = +b.dataset.i; store.set('rg-takes', takes);
       b.parentElement.querySelectorAll('button').forEach(x => x.classList.toggle('sel', x === b));
       say(['s:' + b.dataset.letter]);
@@ -510,7 +531,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     return () => startLesson(li, { test: true, acts: [act] });
   }
   function closeGp(then) { resetArmed = false; if (gp.open) gp.close(); (then || renderMap)(); }
-  $('#test-acts').querySelectorAll('button').forEach(b => b.onclick = () => { ctx.resume(); closeGp(testActivity(b.dataset.t, testL)); });
+  $('#test-acts').querySelectorAll('button').forEach(b => b.onclick = () => { unlock(); closeGp(testActivity(b.dataset.t, testL)); });
   const note = t => { const n = $('#gp-note'); n.textContent = t; n.hidden = false; };
   let resetArmed = false;
   $('#unlock').onclick = () => { progress.unlocked = true; store.set('rg-progress', progress); note('Every lesson is open now.'); };
@@ -528,10 +549,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     C = c; M = m; buildCourse(); renderMap();
     Object.keys(C.prompts).forEach(k => load('p_' + k + '.mp3'));
     Object.keys(C.sounds).forEach(L => { const f = soundFile(L); f && load(f); });
-    if (ctx.state !== 'running') {
-      $('#tapstart').hidden = false;
-      $('#tapstart-btn').onclick = async () => { await ctx.resume(); $('#tapstart').hidden = true; say(['hello']); };
-    }
+    if (ctx.state !== 'running') needTap();
     try { navigator.wakeLock && navigator.wakeLock.request('screen').catch(() => {}); } catch {}
     if (window.RG_PWA && 'serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
   }).catch(() => { app.innerHTML = '<div class="loading">The garden could not load. Check the connection and reload.</div>'; });
