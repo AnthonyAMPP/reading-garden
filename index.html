@@ -47,6 +47,7 @@ body {
   -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
   overscroll-behavior: none;
 }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 20; background: var(--sky); }
 button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; touch-action: manipulation; }
 button:focus-visible { outline: 4px solid var(--plum); outline-offset: 4px; }
 .screen { min-height: 100%; box-sizing: border-box; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -189,7 +190,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
       <p id="gp-note" hidden></p>
     </section>
     <div class="gp-actions"><button class="gp-btn primary" id="gp-close">Back to the garden</button></div>
-    <p style="font-size:13px">Version 17 Nov 2026 (6)</p>
+    <p style="font-size:13px">Version 17 Nov 2026 (7)</p>
   </div>
 </dialog>
 
@@ -234,7 +235,13 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     stop(); $('#tapstart').hidden = false;
     $('#tapstart-btn').onclick = async () => { await unlock(); $('#tapstart').hidden = true; hearAgain ? hearAgain() : say(['hello']); };
   }
-  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && ctx.state !== 'running') ctx.resume().catch(() => {}).then(() => { if (ctx.state !== 'running' && C) needTap(); }); });
+  // iOS can report "running" after the app was in the background while the audio clock is frozen,
+  // so every return from the background asks for one tap to restart sound cleanly.
+  let wasHidden = false;
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') { wasHidden = true; stop(); ctx.suspend().catch(() => {}); }
+    else if (wasHidden && C) { wasHidden = false; needTap(); }
+  });
   async function load(file) {
     if (buffers[file]) return buffers[file];
     buffers[file] = fetch('audio/' + file).then(r => r.arrayBuffer()).then(b => new Promise((res, rej) => ctx.decodeAudioData(b, res, rej))).catch(() => null);
@@ -250,6 +257,9 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
       const src = ctx.createBufferSource(); src.buffer = buf; src.connect(ctx.destination);
       src.onended = () => { if (playing === src) playing = null; res(); };
       playing = src; src.start();
+      // safety net: if the audio clock isn't moving, the sound is frozen; ask for a tap instead of hanging
+      const t0 = ctx.currentTime;
+      setTimeout(() => { if (playing === src && ctx.currentTime === t0) { needTap(); res(); } }, 600);
     });
   }
   // say(['meet', 400, 's:s']) — strings are clips, numbers are pauses (ms)
@@ -354,6 +364,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
   let L_idx, acts, step, hearAgain, TEST = false;
   function startLesson(i, opts = {}) {
     L_idx = i; acts = opts.acts || activitiesFor(LESSONS[i]); step = 0; TEST = !!opts.test;
+    window.scrollTo(0, 0);
     app.innerHTML = `<section id="lesson" class="screen" style="height:100%">
       <div class="lesson-bar"><button class="round-btn" id="home" aria-label="Back to the garden">${ICON.home}</button>
         ${TEST ? '<span class="test-banner">Test run</span>' : ''}
