@@ -414,7 +414,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
       hearAgain();
     }
   }
-  /* Tracing: the letter is drawn faint; the finger paints over it. Done when ~70% of the letter's area is covered. */
+  /* Tracing: the letter is drawn faint; the finger paints over it. Done at ~55% of the letter area, or a third after four strokes. */
   async function runTrace(L, card, cv) {
     try { await document.fonts.load('700 100px Andika'); } catch {}
     const dpr = Math.min(window.devicePixelRatio || 1, 2), W = card.clientWidth, H = card.clientHeight;
@@ -424,7 +424,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     g.font = '700 100px Andika, sans-serif';
     const m0 = g.measureText(L);
     const fontPx = Math.floor(100 * Math.min(H * 0.7 / (m0.actualBoundingBoxAscent + m0.actualBoundingBoxDescent), W * 0.72 / (m0.actualBoundingBoxRight + m0.actualBoundingBoxLeft)));
-    const brush = Math.max(18, W * 0.085);
+    const brush = Math.max(24, W * 0.11);
     const place = c => {
       c.font = `700 ${fontPx}px Andika, sans-serif`; c.textAlign = 'left'; c.textBaseline = 'alphabetic';
       const m = c.measureText(L);
@@ -437,7 +437,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     const o = off.getContext('2d'); const [x0, y0] = place(o); o.fillText(L, x0, y0);
     const data = o.getImageData(0, 0, W, H).data, pts = [], stepPx = 6;
     for (let y = 0; y < H; y += stepPx) for (let x = 0; x < W; x += stepPx) if (data[(y * W + x) * 4 + 3] > 128) pts.push([x, y, false]);
-    let covered = 0, won = false, last = null, lastNag = 0;
+    let covered = 0, won = false, last = null, lastNag = 0, tries = 0;
     const drawGuide = (color) => {
       g.clearRect(0, 0, W, H);
       const [x, y] = place(g);
@@ -449,7 +449,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
       g.strokeStyle = 'rgba(255, 122, 107, .9)'; g.lineWidth = brush; g.lineCap = 'round'; g.lineJoin = 'round';
       g.beginPath(); g.moveTo(last ? last[0] : x, last ? last[1] : y); g.lineTo(x, y); g.stroke();
       last = [x, y];
-      const r2 = (brush * 0.6) ** 2;
+      const r2 = (brush * 0.75) ** 2;
       for (const p of pts) if (!p[2] && (p[0] - x) ** 2 + (p[1] - y) ** 2 < r2) { p[2] = true; covered++; }
     };
     const pos = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * W / r.width, (e.clientY - r.top) * H / r.height]; };
@@ -458,8 +458,9 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     cv.addEventListener('pointermove', e => { if (down && !won) paint(...pos(e)); });
     const lift = async () => {
       if (!down || won) return; down = false; last = null;
-      const frac = covered / pts.length;
-      if (frac >= 0.7) {
+      const frac = covered / pts.length; tries++;
+      // forgiving for small fingers: ~55% of the letter, or a good go after a few strokes
+      if (frac >= 0.55 || (tries >= 4 && frac >= 0.33)) {
         won = true; drawGuide('#74b85a'); card.classList.add('won');
         await say(['s:' + L, 300, 's:' + L]); await praise(); advance();
       } else if (frac > 0.1 && Date.now() - lastNag > 6000) { lastNag = Date.now(); say(['trace_more']); }
