@@ -1,0 +1,362 @@
+{
+ "takes": {
+  "s": [
+   {
+    "file": "s_s_0.mp3",
+    "carrier": "sssss.",
+    "heard": "SSSSSS."
+   },
+   {
+    "file": "s_s_1.mp3",
+    "carrier": "sssss.",
+    "heard": "SUBye."
+   },
+   {
+    "file": "s_s_2.mp3",
+    "carrier": "sssss.",
+    "heard": "Ssssss."
+   }
+  ],
+  "a": [
+   {
+    "file": "s_a_0.mp3",
+    "carrier": "ah, ah, apple.",
+    "heard": "Ah, ah, Apple."
+   },
+   {
+    "file": "s_a_1.mp3",
+    "carrier": "ah, ah, apple.",
+    "heard": "Ah, ah, Apple."
+   },
+   {
+    "file": "s_a_2.mp3",
+    "carrier": "ah, ah, apple.",
+    "heard": "Ah, ah, apple."
+   },
+   {
+    "file": "s_a_3.mp3",
+    "carrier": "a, a, apple.",
+    "heard": "A apple."
+   }
+  ],
+  "t": [
+   {
+    "file": "s_t_0.mp3",
+    "carrier": "tuh, tuh, tiger.",
+    "heard": "Ta-ta, tiger."
+   },
+   {
+    "file": "s_t_1.mp3",
+    "carrier": "tuh, tuh, tiger.",
+    "heard": "Tuh-tuh, tiger."
+   },
+   {
+    "file": "s_t_2.mp3",
+    "carrier": "t, t, tiger.",
+    "heard": "T.T. Tiger."
+   },
+   {
+    "file": "s_t_3.mp3",
+    "carrier": "t, t, tiger.",
+    "heard": "TT Tiger."
+   }
+  ],
+  "p": [
+   {
+    "file": "s_p_0.mp3",
+    "carrier": "puh, puh, pig.",
+    "heard": "Pup, pup, pig."
+   },
+   {
+    "file": "s_p_1.mp3",
+    "carrier": "puh, puh, pig.",
+    "heard": "Puh, puh pig."
+   },
+   {
+    "file": "s_p_2.mp3",
+    "carrier": "puh, puh, pig.",
+    "heard": "Puh! Puh! Pig!"
+   },
+   {
+    "file": "s_p_3.mp3",
+    "carrier": "p, p, pig.",
+    "heard": "Pig."
+   }
+  ],
+  "i": [
+   {
+    "file": "s_i_0.mp3",
+    "carrier": "ih, ih, insect.",
+    "heard": "A.A. Insect."
+   },
+   {
+    "file": "s_i_1.mp3",
+    "carrier": "ih, ih, insect.",
+    "heard": "Pfft, he he, insect."
+   },
+   {
+    "file": "s_i_2.mp3",
+    "carrier": "ih, ih, insect.",
+    "heard": "Haha, insect."
+   },
+   {
+    "file": "s_i_3.mp3",
+    "carrier": "i, i, insect.",
+    "heard": "I I insect."
+   }
+  ],
+  "n": [
+   {
+    "file": "s_n_0.mp3",
+    "carrier": "nnn, nnn, nest.",
+    "heard": "N-n-n-nest."
+   },
+   {
+    "file": "s_n_1.mp3",
+    "carrier": "nnn, nnn, nest.",
+    "heard": "N-n-n-nest."
+   }
+  ],
+  "m": [
+   {
+    "file": "s_m_0.mp3",
+    "carrier": "mmm, mmm, moon.",
+    "heard": "Mm-mm, moon."
+   },
+   {
+    "file": "s_m_1.mp3",
+    "carrier": "mmm, mmm, moon.",
+    "heard": "Mm-hmm, moon."
+   },
+   {
+    "file": "s_m_2.mp3",
+    "carrier": "mmm, mmm, moon.",
+    "heard": "Mmm, mmm, moon."
+   }
+  ],
+  "d": [
+   {
+    "file": "s_d_0.mp3",
+    "carrier": "duh, duh, dog.",
+    "heard": "Duh duh, dog."
+   },
+   {
+    "file": "s_d_1.mp3",
+    "carrier": "duh, duh, dog.",
+    "heard": "Duh, duh, dog."
+   },
+   {
+    "file": "s_d_2.mp3",
+    "carrier": "d, d, dog.",
+    "heard": "The dog."
+   },
+   {
+    "file": "s_d_3.mp3",
+    "carrier": "d, d, dog.",
+    "heard": "Duh, dog."
+   }
+  ],
+  "g": [
+   {
+    "file": "s_g_0.mp3",
+    "carrier": "g, g, goat.",
+    "heard": "GG Goat."
+   },
+   {
+    "file": "s_g_1.mp3",
+    "carrier": "guh, guh, goat.",
+    "heard": "G-gah, goat."
+   },
+   {
+    "file": "s_g_2.mp3",
+    "carrier": "guh, guh, goat.",
+    "heard": "G-G-Goat."
+   },
+   {
+    "file": "s_g_3.mp3",
+    "carrier": "guh, guh, goat.",
+    "heard": "G-G-Goat."
+   }
+  ],
+  "o": [
+   {
+    "file": "s_o_0.mp3",
+    "carrier": "o, o, octopus.",
+    "heard": "Oh, oh, octopus."
+   },
+   {
+    "file": "s_o_1.mp3",
+    "carrier": "o, o, octopus.",
+    "heard": "Oh, oh octopus."
+   }
+  ],
+  "c": [
+   {
+    "file": "s_c_0.mp3",
+    "carrier": "kuh, kuh, cat.",
+    "heard": "Cuh-cuh-cat."
+   },
+   {
+    "file": "s_c_1.mp3",
+    "carrier": "kuh, kuh, cat.",
+    "heard": "Kuh-kuh-cat."
+   },
+   {
+    "file": "s_c_2.mp3",
+    "carrier": "kuh, kuh, cat.",
+    "heard": "Cuh-cuh-cat."
+   },
+   {
+    "file": "s_c_3.mp3",
+    "carrier": "c, c, cat.",
+    "heard": "CC cat."
+   }
+  ],
+  "k": [
+   {
+    "file": "s_k_0.mp3",
+    "carrier": "kuh, kuh, kite.",
+    "heard": "Kuh-huh-kite!"
+   },
+   {
+    "file": "s_k_1.mp3",
+    "carrier": "k, k, kite.",
+    "heard": "K.K. Kite."
+   },
+   {
+    "file": "s_k_2.mp3",
+    "carrier": "k, k, kite.",
+    "heard": "Kate Kate Kite."
+   },
+   {
+    "file": "s_k_3.mp3",
+    "carrier": "k, k, kite.",
+    "heard": "Kate Kate Kite."
+   }
+  ],
+  "e": [
+   {
+    "file": "s_e_0.mp3",
+    "carrier": "eh, eh, egg.",
+    "heard": "Ha ha! Egg."
+   },
+   {
+    "file": "s_e_1.mp3",
+    "carrier": "eh, eh, egg.",
+    "heard": "E-egg."
+   }
+  ],
+  "u": [
+   {
+    "file": "s_u_0.mp3",
+    "carrier": "uh, uh, umbrella.",
+    "heard": "Umbrella."
+   },
+   {
+    "file": "s_u_1.mp3",
+    "carrier": "uh, uh, umbrella.",
+    "heard": "Umbrella."
+   },
+   {
+    "file": "s_u_2.mp3",
+    "carrier": "u, u, umbrella.",
+    "heard": "UU umbrella."
+   },
+   {
+    "file": "s_u_3.mp3",
+    "carrier": "uh, uh, umbrella.",
+    "heard": "U-U-Umbrella."
+   }
+  ],
+  "r": [
+   {
+    "file": "s_r_0.mp3",
+    "carrier": "rrr, rrr, rabbit.",
+    "heard": "Rabbit."
+   },
+   {
+    "file": "s_r_1.mp3",
+    "carrier": "rrr, rrr, rabbit.",
+    "heard": "Rabbit."
+   }
+  ],
+  "h": [
+   {
+    "file": "s_h_0.mp3",
+    "carrier": "hhh, hhh, horse.",
+    "heard": "Horse!"
+   },
+   {
+    "file": "s_h_1.mp3",
+    "carrier": "hhh, hhh, horse.",
+    "heard": "Horse."
+   },
+   {
+    "file": "s_h_2.mp3",
+    "carrier": "hhh, hhh, horse.",
+    "heard": "Horse."
+   },
+   {
+    "file": "s_h_3.mp3",
+    "carrier": "h, h, horse.",
+    "heard": "Horse."
+   }
+  ],
+  "b": [
+   {
+    "file": "s_b_0.mp3",
+    "carrier": "buh, buh, ball.",
+    "heard": "Buh-buh ball."
+   },
+   {
+    "file": "s_b_1.mp3",
+    "carrier": "buh, buh, ball.",
+    "heard": "Buh-buh-ball."
+   },
+   {
+    "file": "s_b_2.mp3",
+    "carrier": "b, b, ball.",
+    "heard": "B.B. Ball."
+   },
+   {
+    "file": "s_b_3.mp3",
+    "carrier": "b, b, ball.",
+    "heard": "BB ball."
+   }
+  ],
+  "f": [
+   {
+    "file": "s_f_0.mp3",
+    "carrier": "fffff.",
+    "heard": "Ohh FIN Elder Comics."
+   },
+   {
+    "file": "s_f_1.mp3",
+    "carrier": "fffff.",
+    "heard": "You."
+   },
+   {
+    "file": "s_f_2.mp3",
+    "carrier": "fffff.",
+    "heard": "으아아아아."
+   }
+  ],
+  "l": [
+   {
+    "file": "s_l_0.mp3",
+    "carrier": "lll, lll, lion.",
+    "heard": "Lion."
+   },
+   {
+    "file": "s_l_1.mp3",
+    "carrier": "lll, lll, lion.",
+    "heard": "Lion."
+   },
+   {
+    "file": "s_l_2.mp3",
+    "carrier": "lll, lll, lion.",
+    "heard": "Lion."
+   }
+  ]
+ }
+}

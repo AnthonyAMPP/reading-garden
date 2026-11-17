@@ -1,0 +1,281 @@
+{
+  "voice_profile": "44819806",
+  "child": "Theo",
+  "sounds": {
+    "s": {
+      "respell": "sss",
+      "kw": "snake",
+      "pic": "🐍",
+      "continuant": true
+    },
+    "a": {
+      "respell": "ah",
+      "kw": "apple",
+      "pic": "🍎"
+    },
+    "t": {
+      "respell": "tuh",
+      "kw": "tiger",
+      "pic": "🐯"
+    },
+    "p": {
+      "respell": "puh",
+      "kw": "pig",
+      "pic": "🐷"
+    },
+    "i": {
+      "respell": "ih",
+      "kw": "insect",
+      "pic": "🐞"
+    },
+    "n": {
+      "respell": "nnn",
+      "kw": "nest",
+      "pic": "🪺",
+      "continuant": true
+    },
+    "m": {
+      "respell": "mmm",
+      "kw": "moon",
+      "pic": "🌙",
+      "continuant": true
+    },
+    "d": {
+      "respell": "duh",
+      "kw": "dog",
+      "pic": "🐶"
+    },
+    "g": {
+      "respell": "guh",
+      "kw": "goat",
+      "pic": "🐐"
+    },
+    "o": {
+      "respell": "o",
+      "kw": "octopus",
+      "pic": "🐙"
+    },
+    "c": {
+      "respell": "kuh",
+      "kw": "cat",
+      "pic": "🐱"
+    },
+    "k": {
+      "respell": "kuh",
+      "kw": "kite",
+      "pic": "🪁"
+    },
+    "e": {
+      "respell": "eh",
+      "kw": "egg",
+      "pic": "🥚"
+    },
+    "u": {
+      "respell": "uh",
+      "kw": "umbrella",
+      "pic": "☂️"
+    },
+    "r": {
+      "respell": "rrr",
+      "kw": "rabbit",
+      "pic": "🐰",
+      "continuant": true
+    },
+    "h": {
+      "respell": "hhh",
+      "kw": "horse",
+      "pic": "🐴"
+    },
+    "b": {
+      "respell": "buh",
+      "kw": "ball",
+      "pic": "⚽"
+    },
+    "f": {
+      "respell": "fff",
+      "kw": "fish",
+      "pic": "🐟",
+      "continuant": true
+    },
+    "l": {
+      "respell": "lll",
+      "kw": "lion",
+      "pic": "🦁",
+      "continuant": true
+    }
+  },
+  "extra_pictures": {
+    "sun": "☀️",
+    "sock": "🧦",
+    "ant": "🐜",
+    "tent": "⛺",
+    "pan": "🍳",
+    "nose": "👃",
+    "mouse": "🐭",
+    "duck": "🦆",
+    "gift": "🎁",
+    "car": "🚗",
+    "king": "👑",
+    "elephant": "🐘",
+    "rocket": "🚀",
+    "hat": "🎩",
+    "bus": "🚌",
+    "frog": "🐸",
+    "leaf": "🍃",
+    "orange": "🍊",
+    "up": "⬆️",
+    "insect": "🐞"
+  },
+  "units": [
+    {
+      "name": "Sunny Path",
+      "sounds": [
+        "s",
+        "a",
+        "t",
+        "p"
+      ],
+      "blend": [
+        "tap",
+        "pat",
+        "sat"
+      ]
+    },
+    {
+      "name": "Moon Pond",
+      "sounds": [
+        "i",
+        "n",
+        "m",
+        "d"
+      ],
+      "blend": [
+        "pin",
+        "pan",
+        "map",
+        "man",
+        "sad",
+        "nap"
+      ]
+    },
+    {
+      "name": "Goat Hill",
+      "sounds": [
+        "g",
+        "o",
+        "c",
+        "k"
+      ],
+      "blend": [
+        "pig",
+        "dog",
+        "cat",
+        "pot",
+        "can",
+        "cap",
+        "mop",
+        "kit"
+      ]
+    },
+    {
+      "name": "Rabbit Wood",
+      "sounds": [
+        "e",
+        "u",
+        "r"
+      ],
+      "blend": [
+        "pen",
+        "net",
+        "sun",
+        "mug",
+        "cup",
+        "nut",
+        "red",
+        "rat",
+        "ten"
+      ]
+    },
+    {
+      "name": "Lion Rock",
+      "sounds": [
+        "h",
+        "b",
+        "f",
+        "l"
+      ],
+      "blend": [
+        "hat",
+        "hen",
+        "bus",
+        "bed",
+        "bag",
+        "fan",
+        "log",
+        "leg",
+        "bat",
+        "bin"
+      ]
+    }
+  ],
+  "blend_pictures": {
+    "tap": "🚰",
+    "pat": "🤚",
+    "sat": "🪑",
+    "pin": "📌",
+    "pan": "🍳",
+    "map": "🗺️",
+    "man": "👨",
+    "sad": "😢",
+    "nap": "😴",
+    "pig": "🐷",
+    "dog": "🐶",
+    "cat": "🐱",
+    "pot": "🪴",
+    "can": "🥫",
+    "cap": "🧢",
+    "mop": "🧹",
+    "kit": "🧰",
+    "pen": "🖊️",
+    "net": "🥅",
+    "sun": "☀️",
+    "mug": "☕",
+    "cup": "🥤",
+    "nut": "🥜",
+    "red": "🔴",
+    "rat": "🐀",
+    "ten": "🔟",
+    "hat": "🎩",
+    "hen": "🐔",
+    "bus": "🚌",
+    "bed": "🛏️",
+    "bag": "👜",
+    "fan": "🪭",
+    "log": "🪵",
+    "leg": "🦵",
+    "bat": "🦇",
+    "bin": "🗑️"
+  },
+  "prompts": {
+    "hello": "Hello Theo! Let's play a reading game.",
+    "meet": "Listen! This letter says",
+    "again": "Say it with me!",
+    "tap_letter": "Can you tap the letter that says",
+    "starts": "What sound does this start with?",
+    "sound_out": "Let's sound it out!",
+    "which_pic": "Which picture is it?",
+    "it_says": "It says",
+    "praise_1": "Well done!",
+    "praise_2": "Brilliant!",
+    "praise_3": "You did it!",
+    "praise_4": "Super listening!",
+    "praise_5": "Amazing, Theo!",
+    "praise_6": "Yes! Great job!",
+    "try_1": "Oops! Try again.",
+    "try_2": "Not quite. Listen again.",
+    "done": "You finished the lesson! Here is your sticker.",
+    "new_place": "Hooray! A new part of the garden is open!",
+    "trace": "Can you trace the letter with your finger?",
+    "trace_more": "Keep going! Trace all of the letter."
+  }
+}
