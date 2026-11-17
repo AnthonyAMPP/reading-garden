@@ -117,8 +117,10 @@ button:focus-visible { outline: 4px solid var(--plum); outline-offset: 4px; }
 
 /* ---------- Start overlay & grown-ups ---------- */
 #tapstart { position: fixed; inset: 0; background: rgba(32, 51, 29, .55); display: grid; place-items: center; z-index: 30; }
-dialog { border: 0; border-radius: 24px; padding: 0; width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 48px); max-height: calc(100dvh - 48px); margin: auto; color: var(--ink); background: #fff; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; touch-action: pan-y; }
-/* iPhone: the page itself is locked (overscroll none), so the open dialog must be its own scroll area */
+dialog { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; border-radius: 0; box-sizing: border-box; color: var(--ink); background: #fff; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+/* full-screen page with a fixed height: the only layout iPhone Safari reliably scrolls (a content-sized modal did not) */
+.gp-top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff; border-bottom: 1px solid #eef0ea; padding: calc(env(safe-area-inset-top, 0px) + 10px) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px)); }
+.gp-wrap { max-width: 640px; margin: 0 auto; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); }
 html:has(dialog[open]) { overflow: hidden; }
 dialog::backdrop { background: rgba(32, 51, 29, .5); }
 .gp { padding: 22px 22px 26px; display: grid; gap: 18px; }
@@ -157,8 +159,8 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
 </div>
 
 <dialog id="gp" aria-labelledby="gp-title">
-  <div class="gp">
-    <h2 id="gp-title">Grown-ups</h2>
+  <div class="gp-top"><h2 id="gp-title" style="margin:0;font-family:var(--display);font-weight:600;font-size:24px">Grown-ups</h2><button class="gp-btn primary" id="gp-close-top">Back to the garden</button></div>
+  <div class="gp gp-wrap">
     <p>Each lesson is about three minutes: meet a sound, find it among other letters, hear which pictures start with it, then blend sounds into words. The letter order follows UK phonics (s a t p, i n m d, g o c k, e u r, h b f l), the same order Theo will meet at school.</p>
     <section class="gp" style="padding:0;gap:10px">
       <h3>Pick the clearest letter sounds</h3>
@@ -187,7 +189,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
       <p id="gp-note" hidden></p>
     </section>
     <div class="gp-actions"><button class="gp-btn primary" id="gp-close">Back to the garden</button></div>
-    <p style="font-size:13px">Version 17 Nov 2026 (5)</p>
+    <p style="font-size:13px">Version 17 Nov 2026 (6)</p>
   </div>
 </dialog>
 
@@ -545,6 +547,7 @@ dialog::backdrop { background: rgba(32, 51, 29, .5); }
     progress = { done: [], stickers: [] }; store.set('rg-progress', progress); note('Progress cleared. Theo starts at s.');
   };
   $('#gp-close').onclick = () => closeGp();
+  $('#gp-close-top').onclick = () => closeGp();
   // Escape closes the dialog without our buttons: refresh the map so unlock/reset show
   gp.addEventListener('close', () => { resetArmed = false; if ($('#map')) renderMap(); });
 
