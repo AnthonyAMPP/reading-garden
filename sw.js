@@ -11,8 +11,8 @@ self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET') return;
   if (url.origin === location.origin && (e.request.mode === 'navigate' || /\/(index\.html|content\.json|manifest\.json)?$/.test(url.pathname) || url.pathname.endsWith('.json'))) {
-    // page + course data: network first so updates land on the next open; cache when offline
-    e.respondWith(fetch(e.request).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return res; })
+    // page + course data: network first, revalidated past GitHub Pages' 10-minute browser cache, so updates land on the next open; cache when offline
+    e.respondWith(fetch(e.request, { cache: 'no-cache' }).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return res; })
       .catch(() => caches.match(e.request, { ignoreSearch: true })));
   } else if (url.origin === location.origin) {
     e.respondWith(caches.match(e.request, { ignoreSearch: true }).then(r => r || fetch(e.request)));
