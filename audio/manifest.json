@@ -2,107 +2,107 @@
  "takes": {
   "s": [
    {
-    "file": "s_s_0.mp3",
-    "carrier": "sssss.",
-    "heard": "SSSSSS."
+    "file": "s_s_v2_0.mp3",
+    "carrier": "cut from 'sun'",
+    "heard": ""
    },
    {
-    "file": "s_s_1.mp3",
-    "carrier": "sssss.",
-    "heard": "SUBye."
+    "file": "s_s_v2_1.mp3",
+    "carrier": "cut from 'sad'",
+    "heard": ""
    },
    {
-    "file": "s_s_2.mp3",
-    "carrier": "sssss.",
-    "heard": "Ssssss."
+    "file": "s_s_v2_2.mp3",
+    "carrier": "cut from 'sad'",
+    "heard": ""
    }
   ],
   "a": [
    {
-    "file": "s_a_0.mp3",
-    "carrier": "ah, ah, apple.",
-    "heard": "Ah, ah, Apple."
+    "file": "s_a_v2_0.mp3",
+    "carrier": "cut from 'apple'",
+    "heard": ""
    },
    {
-    "file": "s_a_1.mp3",
-    "carrier": "ah, ah, apple.",
-    "heard": "Ah, ah, Apple."
+    "file": "s_a_v2_1.mp3",
+    "carrier": "cut from 'at'",
+    "heard": ""
    },
    {
-    "file": "s_a_2.mp3",
-    "carrier": "ah, ah, apple.",
-    "heard": "Ah, ah, apple."
+    "file": "s_a_v2_2.mp3",
+    "carrier": "cut from 'add'",
+    "heard": ""
    },
    {
-    "file": "s_a_3.mp3",
-    "carrier": "a, a, apple.",
-    "heard": "A apple."
+    "file": "s_a_v2_3.mp3",
+    "carrier": "cut from 'apple'",
+    "heard": ""
    }
   ],
   "t": [
    {
-    "file": "s_t_0.mp3",
-    "carrier": "tuh, tuh, tiger.",
-    "heard": "Ta-ta, tiger."
+    "file": "s_t_v2_0.mp3",
+    "carrier": "cut from 'tap'",
+    "heard": ""
    },
    {
-    "file": "s_t_1.mp3",
-    "carrier": "tuh, tuh, tiger.",
-    "heard": "Tuh-tuh, tiger."
+    "file": "s_t_v2_1.mp3",
+    "carrier": "cut from 'top'",
+    "heard": ""
    },
    {
-    "file": "s_t_2.mp3",
-    "carrier": "t, t, tiger.",
-    "heard": "T.T. Tiger."
+    "file": "s_t_v2_2.mp3",
+    "carrier": "cut from 'tap'",
+    "heard": ""
    },
    {
-    "file": "s_t_3.mp3",
-    "carrier": "t, t, tiger.",
-    "heard": "TT Tiger."
+    "file": "s_t_v2_3.mp3",
+    "carrier": "cut from 'top'",
+    "heard": ""
    }
   ],
   "p": [
    {
-    "file": "s_p_0.mp3",
-    "carrier": "puh, puh, pig.",
-    "heard": "Pup, pup, pig."
+    "file": "s_p_v2_0.mp3",
+    "carrier": "cut from 'pan'",
+    "heard": ""
    },
    {
-    "file": "s_p_1.mp3",
-    "carrier": "puh, puh, pig.",
-    "heard": "Puh, puh pig."
+    "file": "s_p_v2_1.mp3",
+    "carrier": "cut from 'pot'",
+    "heard": ""
    },
    {
-    "file": "s_p_2.mp3",
-    "carrier": "puh, puh, pig.",
-    "heard": "Puh! Puh! Pig!"
+    "file": "s_p_v2_2.mp3",
+    "carrier": "cut from 'pig'",
+    "heard": ""
    },
    {
-    "file": "s_p_3.mp3",
-    "carrier": "p, p, pig.",
-    "heard": "Pig."
+    "file": "s_p_v2_3.mp3",
+    "carrier": "cut from 'pan'",
+    "heard": ""
    }
   ],
   "i": [
    {
-    "file": "s_i_0.mp3",
-    "carrier": "ih, ih, insect.",
-    "heard": "A.A. Insect."
+    "file": "s_i_v2_0.mp3",
+    "carrier": "cut from 'it'",
+    "heard": ""
    },
    {
-    "file": "s_i_1.mp3",
-    "carrier": "ih, ih, insect.",
-    "heard": "Pfft, he he, insect."
+    "file": "s_i_v2_1.mp3",
+    "carrier": "cut from 'itch'",
+    "heard": ""
    },
    {
-    "file": "s_i_2.mp3",
-    "carrier": "ih, ih, insect.",
-    "heard": "Haha, insect."
+    "file": "s_i_v2_2.mp3",
+    "carrier": "cut from 'ink'",
+    "heard": ""
    },
    {
-    "file": "s_i_3.mp3",
-    "carrier": "i, i, insect.",
-    "heard": "I I insect."
+    "file": "s_i_v2_3.mp3",
+    "carrier": "cut from 'it'",
+    "heard": ""
    }
   ],
   "n": [
@@ -173,24 +173,24 @@
   ],
   "g": [
    {
-    "file": "s_g_0.mp3",
-    "carrier": "g, g, goat.",
-    "heard": "GG Goat."
+    "file": "s_g_v2_0.mp3",
+    "carrier": "cut from 'gap'",
+    "heard": ""
    },
    {
-    "file": "s_g_1.mp3",
-    "carrier": "guh, guh, goat.",
-    "heard": "G-gah, goat."
+    "file": "s_g_v2_1.mp3",
+    "carrier": "cut from 'got'",
+    "heard": ""
    },
    {
-    "file": "s_g_2.mp3",
-    "carrier": "guh, guh, goat.",
-    "heard": "G-G-Goat."
+    "file": "s_g_v2_2.mp3",
+    "carrier": "cut from 'gum'",
+    "heard": ""
    },
    {
-    "file": "s_g_3.mp3",
-    "carrier": "guh, guh, goat.",
-    "heard": "G-G-Goat."
+    "file": "s_g_v2_3.mp3",
+    "carrier": "cut from 'gap'",
+    "heard": ""
    }
   ],
   "o": [
@@ -261,14 +261,24 @@
   ],
   "e": [
    {
-    "file": "s_e_0.mp3",
-    "carrier": "eh, eh, egg.",
-    "heard": "Ha ha! Egg."
+    "file": "s_e_v2_0.mp3",
+    "carrier": "cut from 'egg'",
+    "heard": ""
    },
    {
-    "file": "s_e_1.mp3",
-    "carrier": "eh, eh, egg.",
-    "heard": "E-egg."
+    "file": "s_e_v2_1.mp3",
+    "carrier": "cut from 'etch'",
+    "heard": ""
+   },
+   {
+    "file": "s_e_v2_2.mp3",
+    "carrier": "cut from 'echo'",
+    "heard": ""
+   },
+   {
+    "file": "s_e_v2_3.mp3",
+    "carrier": "cut from 'egg'",
+    "heard": ""
    }
   ],
   "u": [
@@ -339,24 +349,24 @@
   ],
   "b": [
    {
-    "file": "s_b_0.mp3",
-    "carrier": "buh, buh, ball.",
-    "heard": "Buh-buh ball."
+    "file": "s_b_v2_0.mp3",
+    "carrier": "cut from 'bat'",
+    "heard": ""
    },
    {
-    "file": "s_b_1.mp3",
-    "carrier": "buh, buh, ball.",
-    "heard": "Buh-buh-ball."
+    "file": "s_b_v2_1.mp3",
+    "carrier": "cut from 'bus'",
+    "heard": ""
    },
    {
-    "file": "s_b_2.mp3",
-    "carrier": "b, b, ball.",
-    "heard": "B.B. Ball."
+    "file": "s_b_v2_2.mp3",
+    "carrier": "cut from 'bed'",
+    "heard": ""
    },
    {
-    "file": "s_b_3.mp3",
-    "carrier": "b, b, ball.",
-    "heard": "BB ball."
+    "file": "s_b_v2_3.mp3",
+    "carrier": "cut from 'bat'",
+    "heard": ""
    }
   ],
   "f": [
