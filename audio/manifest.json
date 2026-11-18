@@ -107,53 +107,68 @@
   ],
   "n": [
    {
-    "file": "s_n_0.mp3",
-    "carrier": "nnn, nnn, nest.",
-    "heard": "N-n-n-nest."
+    "file": "s_n_v2_0.mp3",
+    "carrier": "cut from 'nap'",
+    "heard": ""
    },
    {
-    "file": "s_n_1.mp3",
-    "carrier": "nnn, nnn, nest.",
-    "heard": "N-n-n-nest."
+    "file": "s_n_v2_1.mp3",
+    "carrier": "cut from 'net'",
+    "heard": ""
+   },
+   {
+    "file": "s_n_v2_2.mp3",
+    "carrier": "cut from 'nest'",
+    "heard": ""
+   },
+   {
+    "file": "s_n_v2_3.mp3",
+    "carrier": "cut from 'nap'",
+    "heard": ""
    }
   ],
   "m": [
    {
-    "file": "s_m_0.mp3",
-    "carrier": "mmm, mmm, moon.",
-    "heard": "Mm-mm, moon."
+    "file": "s_m_v2_0.mp3",
+    "carrier": "cut from 'mat'",
+    "heard": ""
    },
    {
-    "file": "s_m_1.mp3",
-    "carrier": "mmm, mmm, moon.",
-    "heard": "Mm-hmm, moon."
+    "file": "s_m_v2_1.mp3",
+    "carrier": "cut from 'map'",
+    "heard": ""
    },
    {
-    "file": "s_m_2.mp3",
-    "carrier": "mmm, mmm, moon.",
-    "heard": "Mmm, mmm, moon."
+    "file": "s_m_v2_2.mp3",
+    "carrier": "cut from 'mess'",
+    "heard": ""
+   },
+   {
+    "file": "s_m_v2_3.mp3",
+    "carrier": "cut from 'mat'",
+    "heard": ""
    }
   ],
   "d": [
    {
-    "file": "s_d_0.mp3",
-    "carrier": "duh, duh, dog.",
-    "heard": "Duh duh, dog."
+    "file": "s_d_v2_0.mp3",
+    "carrier": "cut from 'dog'",
+    "heard": ""
    },
    {
-    "file": "s_d_1.mp3",
-    "carrier": "duh, duh, dog.",
-    "heard": "Duh, duh, dog."
+    "file": "s_d_v2_1.mp3",
+    "carrier": "cut from 'duck'",
+    "heard": ""
    },
    {
-    "file": "s_d_2.mp3",
-    "carrier": "d, d, dog.",
-    "heard": "The dog."
+    "file": "s_d_v2_2.mp3",
+    "carrier": "cut from 'dad'",
+    "heard": ""
    },
    {
-    "file": "s_d_3.mp3",
-    "carrier": "d, d, dog.",
-    "heard": "Duh, dog."
+    "file": "s_d_v2_3.mp3",
+    "carrier": "cut from 'dog'",
+    "heard": ""
    }
   ],
   "g": [
@@ -180,58 +195,68 @@
   ],
   "o": [
    {
-    "file": "s_o_0.mp3",
-    "carrier": "o, o, octopus.",
-    "heard": "Oh, oh, octopus."
+    "file": "s_o_v2_0.mp3",
+    "carrier": "cut from 'octopus'",
+    "heard": ""
    },
    {
-    "file": "s_o_1.mp3",
-    "carrier": "o, o, octopus.",
-    "heard": "Oh, oh octopus."
+    "file": "s_o_v2_1.mp3",
+    "carrier": "cut from 'otter'",
+    "heard": ""
+   },
+   {
+    "file": "s_o_v2_2.mp3",
+    "carrier": "cut from 'olive'",
+    "heard": ""
+   },
+   {
+    "file": "s_o_v2_3.mp3",
+    "carrier": "cut from 'octopus'",
+    "heard": ""
    }
   ],
   "c": [
    {
-    "file": "s_c_0.mp3",
-    "carrier": "kuh, kuh, cat.",
-    "heard": "Cuh-cuh-cat."
+    "file": "s_c_v2_0.mp3",
+    "carrier": "cut from 'cat'",
+    "heard": ""
    },
    {
-    "file": "s_c_1.mp3",
-    "carrier": "kuh, kuh, cat.",
-    "heard": "Kuh-kuh-cat."
+    "file": "s_c_v2_1.mp3",
+    "carrier": "cut from 'cup'",
+    "heard": ""
    },
    {
-    "file": "s_c_2.mp3",
-    "carrier": "kuh, kuh, cat.",
-    "heard": "Cuh-cuh-cat."
+    "file": "s_c_v2_2.mp3",
+    "carrier": "cut from 'cat'",
+    "heard": ""
    },
    {
-    "file": "s_c_3.mp3",
-    "carrier": "c, c, cat.",
-    "heard": "CC cat."
+    "file": "s_c_v2_3.mp3",
+    "carrier": "cut from 'cup'",
+    "heard": ""
    }
   ],
   "k": [
    {
-    "file": "s_k_0.mp3",
-    "carrier": "kuh, kuh, kite.",
-    "heard": "Kuh-huh-kite!"
+    "file": "s_k_v2_0.mp3",
+    "carrier": "cut from 'kit'",
+    "heard": ""
    },
    {
-    "file": "s_k_1.mp3",
-    "carrier": "k, k, kite.",
-    "heard": "K.K. Kite."
+    "file": "s_k_v2_1.mp3",
+    "carrier": "cut from 'kite'",
+    "heard": ""
    },
    {
-    "file": "s_k_2.mp3",
-    "carrier": "k, k, kite.",
-    "heard": "Kate Kate Kite."
+    "file": "s_k_v2_2.mp3",
+    "carrier": "cut from 'kettle'",
+    "heard": ""
    },
    {
-    "file": "s_k_3.mp3",
-    "carrier": "k, k, kite.",
-    "heard": "Kate Kate Kite."
+    "file": "s_k_v2_3.mp3",
+    "carrier": "cut from 'kit'",
+    "heard": ""
    }
   ],
   "e": [
@@ -248,58 +273,68 @@
   ],
   "u": [
    {
-    "file": "s_u_0.mp3",
-    "carrier": "uh, uh, umbrella.",
-    "heard": "Umbrella."
+    "file": "s_u_v2_0.mp3",
+    "carrier": "cut from 'up'",
+    "heard": ""
    },
    {
-    "file": "s_u_1.mp3",
-    "carrier": "uh, uh, umbrella.",
-    "heard": "Umbrella."
+    "file": "s_u_v2_1.mp3",
+    "carrier": "cut from 'ugly'",
+    "heard": ""
    },
    {
-    "file": "s_u_2.mp3",
-    "carrier": "u, u, umbrella.",
-    "heard": "UU umbrella."
+    "file": "s_u_v2_2.mp3",
+    "carrier": "cut from 'upper'",
+    "heard": ""
    },
    {
-    "file": "s_u_3.mp3",
-    "carrier": "uh, uh, umbrella.",
-    "heard": "U-U-Umbrella."
+    "file": "s_u_v2_3.mp3",
+    "carrier": "cut from 'up'",
+    "heard": ""
    }
   ],
   "r": [
    {
-    "file": "s_r_0.mp3",
-    "carrier": "rrr, rrr, rabbit.",
-    "heard": "Rabbit."
+    "file": "s_r_v2_0.mp3",
+    "carrier": "cut from 'red'",
+    "heard": ""
    },
    {
-    "file": "s_r_1.mp3",
-    "carrier": "rrr, rrr, rabbit.",
-    "heard": "Rabbit."
+    "file": "s_r_v2_1.mp3",
+    "carrier": "cut from 'run'",
+    "heard": ""
+   },
+   {
+    "file": "s_r_v2_2.mp3",
+    "carrier": "cut from 'rat'",
+    "heard": ""
+   },
+   {
+    "file": "s_r_v2_3.mp3",
+    "carrier": "cut from 'red'",
+    "heard": ""
    }
   ],
   "h": [
    {
-    "file": "s_h_0.mp3",
-    "carrier": "hhh, hhh, horse.",
-    "heard": "Horse!"
+    "file": "s_h_v2_0.mp3",
+    "carrier": "cut from 'hat'",
+    "heard": ""
    },
    {
-    "file": "s_h_1.mp3",
-    "carrier": "hhh, hhh, horse.",
-    "heard": "Horse."
+    "file": "s_h_v2_1.mp3",
+    "carrier": "cut from 'hen'",
+    "heard": ""
    },
    {
-    "file": "s_h_2.mp3",
-    "carrier": "hhh, hhh, horse.",
-    "heard": "Horse."
+    "file": "s_h_v2_2.mp3",
+    "carrier": "cut from 'hop'",
+    "heard": ""
    },
    {
-    "file": "s_h_3.mp3",
-    "carrier": "h, h, horse.",
-    "heard": "Horse."
+    "file": "s_h_v2_3.mp3",
+    "carrier": "cut from 'hat'",
+    "heard": ""
    }
   ],
   "b": [
@@ -326,36 +361,46 @@
   ],
   "f": [
    {
-    "file": "s_f_0.mp3",
-    "carrier": "fffff.",
-    "heard": "Ohh FIN Elder Comics."
+    "file": "s_f_v2_0.mp3",
+    "carrier": "cut from 'fish'",
+    "heard": ""
    },
    {
-    "file": "s_f_1.mp3",
-    "carrier": "fffff.",
-    "heard": "You."
+    "file": "s_f_v2_1.mp3",
+    "carrier": "cut from 'fan'",
+    "heard": ""
    },
    {
-    "file": "s_f_2.mp3",
-    "carrier": "fffff.",
-    "heard": "으아아아아."
+    "file": "s_f_v2_2.mp3",
+    "carrier": "cut from 'fox'",
+    "heard": ""
+   },
+   {
+    "file": "s_f_v2_3.mp3",
+    "carrier": "cut from 'fish'",
+    "heard": ""
    }
   ],
   "l": [
    {
-    "file": "s_l_0.mp3",
-    "carrier": "lll, lll, lion.",
-    "heard": "Lion."
+    "file": "s_l_v2_0.mp3",
+    "carrier": "cut from 'leg'",
+    "heard": ""
    },
    {
-    "file": "s_l_1.mp3",
-    "carrier": "lll, lll, lion.",
-    "heard": "Lion."
+    "file": "s_l_v2_1.mp3",
+    "carrier": "cut from 'lip'",
+    "heard": ""
    },
    {
-    "file": "s_l_2.mp3",
-    "carrier": "lll, lll, lion.",
-    "heard": "Lion."
+    "file": "s_l_v2_2.mp3",
+    "carrier": "cut from 'log'",
+    "heard": ""
+   },
+   {
+    "file": "s_l_v2_3.mp3",
+    "carrier": "cut from 'leg'",
+    "heard": ""
    }
   ]
  }
